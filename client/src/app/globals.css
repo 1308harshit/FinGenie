@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 224 71.4% 4.1%;
+        --card: 0 0% 100%;
+        --card-foreground: 224 71.4% 4.1%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 224 71.4% 4.1%;
+        --primary: 262.1 83.3% 57.8%;
+        --primary-foreground: 210 20% 98%;
+        --secondary: 220 14.3% 95.9%;
+        --secondary-foreground: 220.9 39.3% 11%;
+        --muted: 220 14.3% 95.9%;
+        --muted-foreground: 220 8.9% 46.1%;
+        --accent: 220 14.3% 95.9%;
+        --accent-foreground: 220.9 39.3% 11%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 20% 98%;
+        --border: 220 13% 91%;
+        --input: 220 13% 91%;
+        --ring: 262.1 83.3% 57.8%;
+        --radius: 0.5rem;
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+    }
+
+    .dark {
+        --background: 224 71.4% 4.1%;
+        --foreground: 210 20% 98%;
+        --card: 224 71.4% 4.1%;
+        --card-foreground: 210 20% 98%;
+        --popover: 224 71.4% 4.1%;
+        --popover-foreground: 210 20% 98%;
+        --primary: 263.4 70% 50.4%;
+        --primary-foreground: 210 20% 98%;
+        --secondary: 215 27.9% 16.9%;
+        --secondary-foreground: 210 20% 98%;
+        --muted: 215 27.9% 16.9%;
+        --muted-foreground: 217.9 10.6% 64.9%;
+        --accent: 215 27.9% 16.9%;
+        --accent-foreground: 210 20% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 20% 98%;
+        --border: 215 27.9% 16.9%;
+        --input: 215 27.9% 16.9%;
+        --ring: 263.4 70% 50.4%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+
+/* Amplify UI Overrides */
+[data-amplify-authenticator] {
+    --amplify-components-button-primary-background-color: var(--primary);
+    --amplify-components-button-primary-hover-background-color: hsl(
+            var(--primary) / 0.9
+    );
+    --amplify-components-button-border-radius: var(--radius);
+    --amplify-components-fieldcontrol-border-radius: var(--radius);
+}
+
+[data-amplify-authenticator][data-variation="default"] {
+    height: 100%;
+    padding: 2rem !important;
+}
+
+[data-amplify-authenticator] [data-amplify-router] {
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 400px !important;
+    margin: 0 auto;
+}
+
+[data-amplify-authenticator] [data-amplify-container] {
+    border-radius: var(--radius);
+    padding: 2rem !important;
+    border: 1px solid hsl(var(--border));
+}
+
+[data-amplify-authenticator] [data-amplify-form] {
+    padding: 0 !important;
+}
+
+[data-amplify-authenticator] .amplify-tabs__list {
+    display: none;
+}
+
+[data-amplify-authenticator] .amplify-button--primary {
+    width: 100%;
+    height: 2.75rem;
+    margin-top: 1rem;
+    background-color: hsl(var(--primary)) !important;
+    color: hsl(var(--primary-foreground)) !important;
+    @apply font-medium;
+    @apply text-sm;
+}
+
+[data-amplify-authenticator] .amplify-button--primary:hover {
+    background-color: hsl(var(--primary) / 0.8) !important;
+}
+
+[data-amplify-authenticator] .amplify-field-group__control {
+    border-color: hsl(var(--input));
+}
+
+[data-amplify-authenticator] .amplify-field-group__control:focus-within {
+    border-color: hsl(var(--ring)) !important;
+    box-shadow: 0 0 0 1px hsl(var(--ring)) !important;
+}
+
+[data-amplify-authenticator] .amplify-field__show-password {
+    color: hsl(var(--muted-foreground));
+}
+
+[data-amplify-authenticator] .amplify-label {
+    @apply text-sm font-medium;
+    color: hsl(var(--foreground));
+}
+
+[data-amplify-authenticator] .amplify-select {
+    border-color: hsl(var(--input));
+    border-radius: var(--radius);
+    height: 2.5rem;
+    @apply text-sm;
+}
+
+[data-amplify-authenticator] .amplify-text--error {
+    color: #ff0000;
+}
